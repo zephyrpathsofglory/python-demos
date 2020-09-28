@@ -6,7 +6,7 @@ b = iter(a)
 
 c = list(b)
 
-d = list(b)
+d = list(b) # iterator iterated
 
 
 print(a, b, c, d)

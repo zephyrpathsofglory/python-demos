@@ -1,6 +1,7 @@
 lst = [lambda x: i * x for i in range(4)]
 print([m(2) for m in lst])
-# zenm dayin [0, 2 ,4 ,6]
+# how to print [0, 2 ,4 ,6] ?
+print()
 
 def generator():
     print('aaa')
@@ -20,6 +21,7 @@ def func(g):
     finally:
         print('end')
 
+print("------")
 print(func.__closure__)
 
 g = generator()

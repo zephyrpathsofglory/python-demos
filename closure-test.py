@@ -11,7 +11,7 @@ def print_msg():
         # printer 是嵌套函数
         print(msg)
         print(value)
-    print(id(printer))
+    print('printer', id(printer))
     return printer
 
 print(type(print_msg))

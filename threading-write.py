@@ -13,9 +13,12 @@ def change(n):
     balance = balance - n
     print('minus to %d' % balance)
 
+    if balance < 0:
+        raise(Exception.new("invalid balance")) 
+
 
 def run_thread(n):
-    for i in range(10000000):
+    for _ in range(100000):
         # change(n)
         lock.acquire()
         try:

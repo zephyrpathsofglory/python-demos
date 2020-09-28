@@ -5,6 +5,7 @@ class A(object):
     num = 0
 
     def __init__(self, lst=[]):
+        print(id(lst))
         self.lst = lst
 
     def add(self, value):
@@ -18,7 +19,7 @@ class B(A):
 
 
 def print_lst(obj):
-    print(num, obj.num, obj.lst)
+    print(num, obj.num, obj.lst, id(obj.lst))
 
 
 a = A()

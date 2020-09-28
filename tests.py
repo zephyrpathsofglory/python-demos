@@ -1,11 +1,12 @@
-class myclass(object):
+class Myclass(object):
     def __init__(self):
         self.is_good = True
 
 
-class childclass(myclass):
+class Childclass(Myclass):
     def __init__(self, is_man):
         self.is_man = is_man
+        super().__init__() # need if you want is_good as attribute
 
     @classmethod
     def can_speak(cls):
@@ -16,5 +17,7 @@ class childclass(myclass):
         return self.is_man
 
 
-obj = childclass(True)
+obj = Childclass(True)
+print(obj.man)
+print(Childclass.can_speak())
 print(obj.is_good)

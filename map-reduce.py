@@ -12,10 +12,11 @@ def prod(x, y):
 def is_odd(num):
     return num % 2 == 0
 
-
-print(tuple(map(trans, ['adam', 'LISA', 'barT'])))
-print(list(map(trans, ['adam', 'LISA', 'barT'])))
-print(set(map(trans, ['adam', 'LISA', 'barT'])))
+a = map(trans, ['adam', 'LISA', 'barT'])
+print(a)
+print(tuple(a))
+print(list(a)) # iterator iterated
+print(set(a))
 
 print(reduce(prod, [1, 2, 3, 4, 5, 6]))
 

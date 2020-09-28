@@ -1,3 +1,5 @@
+# manager is used for sharing data between processes
+
 from multiprocessing import Process, Manager
 
 
