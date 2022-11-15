@@ -1,9 +1,5 @@
 import os
-import time
 from multiprocessing import Process
-import threading
-import subprocess
-
 
 print(os.getpid())
 
@@ -18,13 +14,13 @@ print(os.getpid())
 
 
 def run_proc(name):
-    print('run child process %s (%s)' % (name, os.getpid()))
+    print("run child process %s (%s)" % (name, os.getpid()))
 
 
-if __name__ == '__main__':
-    print('parenet pid: %s', os.getpid())
-    p = Process(target=run_proc, args=('test_code',))
-    print('child process will starts')
+if __name__ == "__main__":
+    print("parenet pid: %s", os.getpid())
+    p = Process(target=run_proc, args=("test_code",))
+    print("child process will starts")
     p.start()
     p.join()
-    print('child process stopped.')
+    print("child process stopped.")

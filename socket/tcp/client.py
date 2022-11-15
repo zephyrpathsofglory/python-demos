@@ -10,8 +10,3 @@ for data in [b'Michael', b'james', b'gorden']:
 s.send(b'exit')
 
 s.close()
-
-# head, html = data.split(b'\r\n\r\n', 1)
-# print(head.decode('utf-8'))
-# with open('sina.html', 'wb') as f:
-#     f.write(html)

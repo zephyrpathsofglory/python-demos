@@ -1,31 +1,22 @@
+import os
 import sys
-from multiprocessing import Process
 import time
+from multiprocessing import Process
 
-now = time.time()
-print(now)
-
-fr = [1, 2, 3]
-for i in fr:
-    print(3)
-
-print(1)
+# worker process 也执行了这个文件，下面的打印了2次，为什么？
+print("my pid:")
+print(os.getpid())
 
 
 def worker():
-    print('worler line')
+    print("I am worker!")
     time.sleep(1)
     sys.exit(1)
 
 
 def main():
-    print('start worker')
     Process(target=worker, args=()).start()
-    print('main line')
 
 
-if __name__ == '__main__':
-    start = time.time()
+if __name__ == "__main__":
     main()
-    end = time.time()
-    print('duration:', end - start)

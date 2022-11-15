@@ -1,6 +1,6 @@
 # _*_ coding:utf-8 _*_
-import time
 import threading
+import time
 
 
 def decrement(n):
@@ -15,7 +15,7 @@ def decrement(n):
 # print(cost)
 
 
-#multi-thread
+# multi-thread
 start = time.time()
 
 t1 = threading.Thread(target=decrement, args=[50000000])
