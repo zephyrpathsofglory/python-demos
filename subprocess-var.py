@@ -1,8 +1,8 @@
 # _*_coding=utf-8 _*_
 
 # 重点：子进程创建时会复制父进程中的所有变量
-from multiprocessing import Process
 import time
+from multiprocessing import Process
 
 l = [1]
 
@@ -28,5 +28,3 @@ p2.join()
 l.append(0)
 print(p1.is_alive(), p2.is_alive())
 time.sleep(10)
-
-
