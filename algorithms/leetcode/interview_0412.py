@@ -33,7 +33,7 @@ class TreeNode:
 
 
 class Solution:
-    def pathSum(self, root: TreeNode, sum: int) -> int:
+    def path_sum(self, root: TreeNode, sum: int) -> int:
         def rootSum(root: TreeNode, sum):
             if root is None:
                 return 0
@@ -51,8 +51,8 @@ class Solution:
 
         if root is None:
             return ret
-        ret += self.pathSum(root.left, sum)
-        ret += self.pathSum(root.right, sum)
+        ret += self.path_sum(root.left, sum)
+        ret += self.path_sum(root.right, sum)
 
         return ret
 
@@ -68,11 +68,11 @@ root.right.right = TreeNode(4)
 root.right.right.left = TreeNode(5)
 root.right.right.right = TreeNode(1)
 
-assert Solution().pathSum(root, 22) == 3
+assert Solution().path_sum(root, 22) == 3
 
 
 class Solution2:
-    def pathSum(self, root: TreeNode, sum: int):
+    def path_sum(self, root: TreeNode, sum: int):
         prefix = collections.defaultdict(int)
         prefix[0] = 1
 
@@ -93,4 +93,4 @@ class Solution2:
         return dfs(root, 0)
 
 
-assert Solution2().pathSum(root, 22) == 3
+assert Solution2().path_sum(root, 22) == 3

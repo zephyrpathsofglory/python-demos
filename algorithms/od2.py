@@ -25,7 +25,7 @@
 """
 
 
-def serverAvailable(dependencies: list, faultServers: list):
+def server_available(dependencies: list, faultServers: list):
     depMap = {}
     servers = set()
     for d in dependencies:
@@ -48,9 +48,9 @@ def serverAvailable(dependencies: list, faultServers: list):
     return list(servers)
 
 
-assert serverAvailable([["a1", "a2"], ["a5", "a6"], ["a2", "a3"]], ["a5", "a2"]) == [
+assert server_available([["a1", "a2"], ["a5", "a6"], ["a2", "a3"]], ["a5", "a2"]) == [
     "a6",
     "a3",
 ]
 
-assert serverAvailable([["a1", "a2"]], ["a2"]) == []
+assert server_available([["a1", "a2"]], ["a2"]) == []

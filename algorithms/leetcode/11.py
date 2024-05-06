@@ -20,26 +20,26 @@ from typing import List
 
 
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def max_area(self, height: List[int]) -> int:
         lastIdx = len(height) - 1
         li = 0
         ri = lastIdx
 
-        maxArea = height[0]
+        max_area = height[0]
 
         while li != ri:
             size = min(height[li], height[ri]) * (ri - li)
-            maxArea = max(maxArea, size)
+            max_area = max(max_area, size)
             if height[li] > height[ri]:
                 ri -= 1
             else:
                 li += 1
 
-        return maxArea
+        return max_area
 
 
-assert Solution().maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]) == 49
-assert Solution().maxArea([1]) == 1
-assert Solution().maxArea([4, 3, 2, 1, 4]) == 16
-assert Solution().maxArea([1, 1]) == 1
-assert Solution().maxArea([1, 2, 1]) == 2
+assert Solution().max_area([1, 8, 6, 2, 5, 4, 8, 3, 7]) == 49
+assert Solution().max_area([1]) == 1
+assert Solution().max_area([4, 3, 2, 1, 4]) == 16
+assert Solution().max_area([1, 1]) == 1
+assert Solution().max_area([1, 2, 1]) == 2

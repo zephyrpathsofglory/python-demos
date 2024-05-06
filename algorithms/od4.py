@@ -13,7 +13,7 @@ from typing import List
 
 
 class Solution:
-    def minWatering(self, heights: List[int], cnt: int) -> int:
+    def min_watering(self, heights: List[int], cnt: int) -> int:
         heights.sort()
         delta = []
 
@@ -31,7 +31,7 @@ class Solution:
         return min_watering
 
 
-assert Solution().minWatering([7, 1, 9, 10], 3) == 4
-assert Solution().minWatering([7, 1, 9, 9, 10], 3) == 2
-assert Solution().minWatering([7, 1, 9, 10, 10], 3) == 1
-assert Solution().minWatering([7, 1, 9, 9, 9, 10], 3) == 0
+assert Solution().min_watering([7, 1, 9, 10], 3) == 4
+assert Solution().min_watering([7, 1, 9, 9, 10], 3) == 2
+assert Solution().min_watering([7, 1, 9, 10, 10], 3) == 1
+assert Solution().min_watering([7, 1, 9, 9, 9, 10], 3) == 0

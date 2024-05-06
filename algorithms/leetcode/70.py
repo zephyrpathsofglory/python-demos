@@ -38,7 +38,7 @@ f(n) = f(n-1) + f(n-2)
 
 
 class Solution:
-    def climbStaris(self, n: int) -> int:
+    def climb_staris(self, n: int) -> int:
         a, b = 1, 1
         for _ in range(n - 1):
             a, b = b, a + b

@@ -11,11 +11,11 @@
 输出： 4
 """
 
-from typing import List, Deque
+from typing import Deque, List
 
 
 class Solution:
-    def largestRect(self, heights: List[int]) -> int:
+    def largest_rect(self, heights: List[int]) -> int:
         mono_stack = Deque([0])
         heights.append(0)
         heights.insert(0, 0)
@@ -37,9 +37,9 @@ class Solution:
         return max_area
 
 
-assert Solution().largestRect([2, 1, 5, 6, 2, 3]) == 10
-assert Solution().largestRect([2, 1, 5, 6, 2, 3, 2, 3]) == 12
-assert Solution().largestRect([2, 1, 5, 5, 6, 2, 3]) == 15
-assert Solution().largestRect([2, 4]) == 4
-assert Solution().largestRect([1, 3, 4, 500, 2, 7, 4]) == 500
-assert Solution().largestRect([1, 3, 4, 5, 2, 7, 4]) == 12
+assert Solution().largest_rect([2, 1, 5, 6, 2, 3]) == 10
+assert Solution().largest_rect([2, 1, 5, 6, 2, 3, 2, 3]) == 12
+assert Solution().largest_rect([2, 1, 5, 5, 6, 2, 3]) == 15
+assert Solution().largest_rect([2, 4]) == 4
+assert Solution().largest_rect([1, 3, 4, 500, 2, 7, 4]) == 500
+assert Solution().largest_rect([1, 3, 4, 5, 2, 7, 4]) == 12

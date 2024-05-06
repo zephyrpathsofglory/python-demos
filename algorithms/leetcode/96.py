@@ -12,7 +12,7 @@ https://leetcode.cn/problems/unique-binary-search-trees/description/
 
 
 class Solution:
-    def numTrees(self, n: int) -> int:
+    def num_trees(self, n: int) -> int:
         states = [0] * (n + 1)
         states[0], states[1] = 1, 1
 
@@ -23,4 +23,4 @@ class Solution:
         return states[n]
 
 
-assert Solution().numTrees(3) == 5
+assert Solution().num_trees(3) == 5
