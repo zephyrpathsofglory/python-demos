@@ -6,6 +6,7 @@
 from typing import List
 
 
+# 错误的 Solution
 class Solution:
     def _max_containing_water_one_dimension(self, heights: List[int]) -> List[int]:
         states = [[i] for i in heights]
@@ -70,4 +71,19 @@ assert (
         ]
     )
     == 10
+)
+
+### 错误用例，表明 水高度 等于 横竖 2个方向 的 一维维度 水高度中的 min 值，是错误的，其中 值为 4 的横竖2个方向都应该接 9 个雨水，但是
+### 雨水会从下一层的右侧流出 1 个单位，即 [2][3] 坐标的位置流出。
+assert (
+    Solution().max_containing_water_two_dimension(
+        [
+            [12, 13, 1, 12],
+            [13, 4, 13, 12],
+            [13, 8, 10, 12],
+            [12, 13, 12, 12],
+            [13, 13, 13, 13],
+        ]
+    )
+    == 14
 )
