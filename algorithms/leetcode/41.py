@@ -37,7 +37,7 @@ class Solution:
             idx = i - 1
             num = nums[idx]
 
-            while num != i and 1 <= num <= lenz:
+            while num != i and 1 <= num <= lenz and nums[num - 1] != num:
                 tmp = nums[num - 1]
                 nums[num - 1] = num
                 nums[idx] = tmp
@@ -53,5 +53,6 @@ class Solution:
 
 
 assert Solution().first_missing_positive([3, 4, -1, 1]) == 2
+assert Solution().first_missing_positive([1, 1]) == 2
 assert Solution().first_missing_positive([1, 2, 0]) == 3
 assert Solution().first_missing_positive([7, 8, 9, 11, 12]) == 1
