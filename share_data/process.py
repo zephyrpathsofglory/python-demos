@@ -1,7 +1,10 @@
+import multiprocessing
 from multiprocessing import Process
 
 
 def f(n, a):
+    print(multiprocessing.current_process().name)
+    print(multiprocessing.parent_process().name)
     print("f", n, a)
     print(id(n), id(a))
 
@@ -15,6 +18,7 @@ def f(n, a):
 
 
 if __name__ == "__main__":
+    print(multiprocessing.current_process().name)
     num = 0.0
     arr = list(range(5))
     print(id(num), id(arr))

@@ -2,6 +2,7 @@ from multiprocessing import Array, Process, Value
 
 
 def f(n, a):
+    print("f", n, a)
     print(id(n), id(a))
     n.value = 3.14
     for i in range(len(a)):

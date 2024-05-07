@@ -7,6 +7,7 @@ print([m(2) for m in lst])
 lst = [lambda x=i, y=i: y * x for i in range(4)]
 print([m(2) for m in lst])
 
+
 # method 2
 def create_lamdba(x):
     return lambda y: x * y
@@ -29,7 +30,7 @@ def func(g):
         print("start")
         i = next(g)
         print(i)
-    except Exception:
+    except Exception as e:
         print("error")
     else:
         print("ok")
