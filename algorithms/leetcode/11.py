@@ -14,6 +14,13 @@
 
 输入：height = [1,1]
 输出：1
+
+提示：
+
+n == height.length
+2 <= n <= 105
+0 <= height[i] <= 104
+
 """
 
 from typing import List
@@ -25,7 +32,7 @@ class Solution:
         li = 0
         ri = lastIdx
 
-        max_area = height[0]
+        max_area = 0
 
         while li != ri:
             size = min(height[li], height[ri]) * (ri - li)
@@ -39,7 +46,7 @@ class Solution:
 
 
 assert Solution().max_area([1, 8, 6, 2, 5, 4, 8, 3, 7]) == 49
-assert Solution().max_area([1]) == 1
 assert Solution().max_area([4, 3, 2, 1, 4]) == 16
 assert Solution().max_area([1, 1]) == 1
+assert Solution().max_area([2, 1]) == 1
 assert Solution().max_area([1, 2, 1]) == 2
