@@ -6,8 +6,8 @@ authors = ["harden <harden@shundaojia.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-twisted = "^23.8.0"
+python = "^3.12"
+twisted = "^24.3.0"
 
 
 [build-system]
