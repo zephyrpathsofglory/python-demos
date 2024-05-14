@@ -9,6 +9,7 @@
 from typing import List
 
 
+# 递归，数组size大了之后就会出现深堆栈，容易超时，而且要占用更多内存
 class Solution:
     def answer(self, nums: List[int]) -> int:
         def f(nums: List[int]) -> int:
@@ -17,7 +18,7 @@ class Solution:
 
             if len(nums) == 2:
                 return max(nums[0], nums[1])
-            
+
             # 动态规划，选择第一个，下一次从第三个开始，不选择第一个，从第二个开始，2种情况取最大值
             return max(nums[0] + f(nums[2 : len(nums)]), f(nums[1 : len(nums)]))
 
@@ -27,3 +28,20 @@ class Solution:
 assert Solution().answer([1, 2, 3, 1]) == 4
 assert Solution().answer([2, 7, 9, 3, 1]) == 12
 assert Solution().answer([2, 1, 4, 5, 3, 1, 1, 3]) == 12
+
+
+class Solution2:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+
+        first, second = nums[0], max(nums[0], nums[1])
+        for i in range(2, len(nums)):
+            first, second = second, max(first + nums[i], second)
+
+        return second
+
+
+assert Solution2().rob([1, 2, 3, 1]) == 4
+assert Solution2().rob([2, 7, 9, 3, 1]) == 12
+assert Solution2().rob([2, 1, 4, 5, 3, 1, 1, 3]) == 12
